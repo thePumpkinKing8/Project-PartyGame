@@ -36,7 +36,7 @@ public class S_Space : MonoBehaviour
     /// <summary>
     /// triggered when player lands on the space
     /// </summary>
-    public virtual void SpaceLandedOn()
+    public virtual void SpaceLandedOn(S_BoardPlayer player)
     {
         switch(_spaceType)
         {
@@ -52,6 +52,8 @@ public class S_Space : MonoBehaviour
                 Debug.Log("get reward!");
                 break;
         }
+
+        player.EndTurn();
     }
 }
 
